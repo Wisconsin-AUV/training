@@ -13,31 +13,23 @@ img = cv2.imread(path)
 
 ########### ADD CODE HERE ################################
 # this task involves analyzing an image taken from the Robosub
-# competition. Please fill in the code based on the comments
+# competition. Please replace the ? in the code based on the comments
 # using the OpenCV documentation.
 
 # convert to grayscale (why?)
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray = ?
 
 # blur the image (why?)
 kernel_size = (5,5)
 gray_blur = cv2.GaussianBlur(gray, kernel_size, 0)
 
 # get the edges 
-edges = cv2.Canny(gray_blur, 50, 150)
+edges = cv2.Canny(gray_blur, ?, ?)
 
 # Hough Circle detection 
 # https://docs.opencv.org/4.x/da/d53/tutorial_py_houghcircles.html
-circles = cv2.HoughCircles(
-    gray_blur,
-    cv2.HOUGH_GRADIENT,
-    dp=1.2,
-    minDist=50,
-    param1=100,
-    param2=30,
-    minRadius=15,
-    maxRadius=30
-)
+# Hint: use minRadius = 15 & maxRadius = 30 for this example
+circles = ?
 
 ##########################################################
 
