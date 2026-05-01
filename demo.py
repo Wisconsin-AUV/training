@@ -16,9 +16,7 @@ max_thrust  = 67.0   # N      (thruster limit) *this is the real value
 # target depth in meters, 0 at surface
 target_depth = -2.0
 
-Kp = 20.0
-Ki = 1.5
-Kd = 8.0
+
 
 ########### ADD CODE HERE ##########################################
 # This task involves implementing a PID controller for an AUV
@@ -26,6 +24,11 @@ Kd = 8.0
 # the comments and the PID formula:
 #   output = Kp*error + Ki*integral + Kd*derivative
 # Reference: https://en.wikipedia.org/wiki/Proportional%E2%80%93integral%E2%80%93derivative_controller
+
+# PID params (tune them)
+Kp = ?
+Ki = ?
+Kd = ?
 
 # State variables
 depth       = 0.0           # start at the surface
@@ -45,23 +48,23 @@ errors      = []
 for t in time:
 
     # compute error
-    error = target_depth - depth
+    error = ?
 
     # compute integral and derivative of error
-    integral   = integral + error * dt
-    derivative = (error - prev_error) / dt
+    integral   = ?
+    derivative = ?
 
     # use PID control law to calculate input thrust
-    input_thrust = Kp * error + Ki * integral + Kd * derivative
+    input_thrust = ?
 
     # clip thrust to thruster limits so we don't exceed hardware   
-    input_thrust = np.clip(input_thrust, -max_thrust, max_thrust)
+    ???
 
     # update previous error for next iteration
     prev_error = error
 
     # forward dynamics (Euler integration)
-    acceleration = (input_thrust - damping * velocity) / mass
+    acceleration = ?
     velocity     = velocity + acceleration * dt
     depth        = depth    + velocity    * dt
 
