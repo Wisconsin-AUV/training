@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Clean hand-authored WAUV frame URDF (reuses real Onshape STL meshes) -->
+<!-- Hand-authored WAUV frame URDF (reuses real Onshape STL meshes) -->
 <robot name="wauv_frame">
   <link name="enclosure">
     <inertial>

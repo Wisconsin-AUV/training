@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET, struct
 import numpy as np
 import matplotlib.pyplot as plt
 
+# no need to read
 
 def read_urdf(path):
     """Return (root, links, joints) parsed from a URDF file."""

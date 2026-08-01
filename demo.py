@@ -11,19 +11,18 @@ import helpers
 
 MATERIAL, LOOK, PHYSICS = "Aluminium", "grey", "submerged"
 
-
-########### ADD CODE HERE ##########################################
 # Stonefish only has these joint types: fixed, prismatic, revolute
+# Onshape has 4: fixed, prismatic, revolute, continuous
 JOINT_MAP = {"fixed": "fixed", "prismatic": "prismatic", "revolute": "revolute",
              "continuous": "revolute"}
 
 root, links, joints = helpers.read_urdf("frame/urdf/frame.urdf")
 
+########### ADD CODE HERE ##########################################
+
 # Find the base link of the tree - it is the one link that is NEVER a child
-
 children = {j.find("child").get("link") for j in joints}
-
-base = next(l.get("name") for l in links if l.get("name") not in children)
+base = next(l.get("name") for l in links if ???)
 
 scene = ['<?xml version="1.0"?>', '<scenario>',
          f'  <material name="{MATERIAL}" density="2700.0"/>',
@@ -48,9 +47,9 @@ for j in joints:
     child  = j.find("child").get("link")
     ax = j.find("axis")
     axis = f'<axis xyz="{ax.get("xyz")}"/>' if ax is not None and jtype != "fixed" else ''
-    scene += [f'  <joint name="{j.get("name")}" type="{jtype}">',
-              f'    <parent name="{parent}"/><child name="{child}"/>',
-              f'    <origin xyz="{jx}" rpy="{jr}"/>{axis}',
+    scene += [f'  <joint name="{j.get("name")}" type="{???}">',
+              f'    <parent name="{???}"/><child name="{???}"/>',
+              f'    <origin xyz="{???}" rpy="{???}"/>{axis}',
               f'  </joint>']
 
 scene += ['  </robot>', '</scenario>']
@@ -59,7 +58,7 @@ print(f"converted {len(links)} links, {len(joints)} joints -> frame.scn")
 
 # Sweep added leg mass, plot center of mass vs center of buoyancy
 # Collect each part's mass (from the URDF) and its volume + world-z (from the mesh)
-joint_z = {j.find("child").get("link"): float(helpers.origin(j)[0].split()[2]) for j in joints}
+joint_z = {j.find("child").get("link"): float(helpers.origin(j)[0].split()[???]) for j in joints}
 
 mass, vol, z, is_leg = [], [], [], []
 
@@ -80,10 +79,10 @@ for b in ballast:
     # per-part mass with this much ballast added to the legs
     m = mass + is_leg * b / 4
 
-    # center of mass height = mass-weighted average of z (in cm, so *100).
-    com_z.append((m * z).sum() / m.sum() * 100)
+    # center of mass height = MASS-weighted average of z (in cm, so *100).
+    com_z.append(???)
 
-# center of buoyancy height = VOLUME-weighted average of z (in cm)
-cob_z = (vol * z).sum() / vol.sum() * 100
+# center of buoyancy height = VOLUME-weighted average of z (in cm, so *100)
+cob_z = ???
 
 helpers.plot_stability(ballast, np.array(com_z), cob_z)
