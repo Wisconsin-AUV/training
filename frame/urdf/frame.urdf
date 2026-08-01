@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<!-- Clean hand-authored WAUV frame URDF (reuses real Onshape STL meshes) -->
+<robot name="wauv_frame">
+  <link name="enclosure">
+    <inertial>
+      <mass value="2.0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00468333" ixy="0" ixz="0" iyy="0.0154167" iyz="0" izz="0.0192667"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Encl_Plate1_1.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="enclosure_top">
+    <inertial>
+      <mass value="1.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0034" ixy="0" ixz="0" iyy="0.01145" iyz="0" izz="0.01445"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Encl_Plate1.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="tube">
+    <inertial>
+      <mass value="0.6"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00468" ixy="0" ixz="0" iyy="0.00468" iyz="0" izz="0.00036"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Tube_30.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="clamp_left">
+    <inertial>
+      <mass value="0.08"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="2.13333e-05" ixy="0" ixz="0" iyy="2.73333e-05" iyz="0" izz="2.73333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Leg_Bar_Clamp.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="clamp_right">
+    <inertial>
+      <mass value="0.08"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="2.13333e-05" ixy="0" ixz="0" iyy="2.73333e-05" iyz="0" izz="2.73333e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Leg_Bar_Clamp_1.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="leg_fl">
+    <inertial>
+      <mass value="0.4"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00213667" ixy="0" ixz="0" iyy="0.00213667" iyz="0" izz="0.000106667"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Frame_Leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="leg_fr">
+    <inertial>
+      <mass value="0.4"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00213667" ixy="0" ixz="0" iyy="0.00213667" iyz="0" izz="0.000106667"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Frame_Leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="leg_bl">
+    <inertial>
+      <mass value="0.4"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00213667" ixy="0" ixz="0" iyy="0.00213667" iyz="0" izz="0.000106667"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Frame_Leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="leg_br">
+    <inertial>
+      <mass value="0.4"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00213667" ixy="0" ixz="0" iyy="0.00213667" iyz="0" izz="0.000106667"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/Frame_Leg.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="thruster_fl">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.000683333" ixy="0" ixz="0" iyy="0.000683333" iyz="0" izz="0.000533333"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/_45angle_MotorMount2.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="thruster_fr">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.000683333" ixy="0" ixz="0" iyy="0.000683333" iyz="0" izz="0.000533333"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/_45angle_MotorMount2.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="thruster_bl">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.000683333" ixy="0" ixz="0" iyy="0.000683333" iyz="0" izz="0.000533333"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/_45angle_MotorMount2.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <link name="thruster_br">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.000683333" ixy="0" ixz="0" iyy="0.000683333" iyz="0" izz="0.000533333"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://frame/meshes/_45angle_MotorMount2.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="aluminium"><color rgba="0.7 0.7 0.72 1"/></material>
+    </visual>
+  </link>
+  <joint name="enclosure_top_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="enclosure_top"/>
+    <origin xyz="0 0 0.12" rpy="0 0 0"/>
+  </joint>
+  <joint name="tube_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="tube"/>
+    <origin xyz="0 0 0.06" rpy="0 0 0"/>
+  </joint>
+  <joint name="clamp_left_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="clamp_left"/>
+    <origin xyz="0 0.15 0.02" rpy="0 0 0"/>
+  </joint>
+  <joint name="clamp_right_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="clamp_right"/>
+    <origin xyz="0 -0.15 0.02" rpy="0 0 0"/>
+  </joint>
+  <joint name="leg_fl_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="leg_fl"/>
+    <origin xyz="0.2 0.15 -0.05" rpy="0 0 0"/>
+  </joint>
+  <joint name="leg_fr_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="leg_fr"/>
+    <origin xyz="0.2 -0.15 -0.05" rpy="0 0 0"/>
+  </joint>
+  <joint name="leg_bl_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="leg_bl"/>
+    <origin xyz="-0.2 0.15 -0.05" rpy="0 0 0"/>
+  </joint>
+  <joint name="leg_br_joint" type="fixed">
+    <parent link="enclosure"/>
+    <child link="leg_br"/>
+    <origin xyz="-0.2 -0.15 -0.05" rpy="0 0 0"/>
+  </joint>
+  <joint name="thruster_fl_joint" type="continuous">
+    <parent link="enclosure"/>
+    <child link="thruster_fl"/>
+    <origin xyz="0.25 0.2 0.0" rpy="0 0 0.785"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="30"/>
+  </joint>
+  <joint name="thruster_fr_joint" type="continuous">
+    <parent link="enclosure"/>
+    <child link="thruster_fr"/>
+    <origin xyz="0.25 -0.2 0.0" rpy="0 0 -0.785"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="30"/>
+  </joint>
+  <joint name="thruster_bl_joint" type="continuous">
+    <parent link="enclosure"/>
+    <child link="thruster_bl"/>
+    <origin xyz="-0.25 0.2 0.0" rpy="0 0 2.356"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="30"/>
+  </joint>
+  <joint name="thruster_br_joint" type="continuous">
+    <parent link="enclosure"/>
+    <child link="thruster_br"/>
+    <origin xyz="-0.25 -0.2 0.0" rpy="0 0 -2.356"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" velocity="30"/>
+  </joint>
+</robot>
