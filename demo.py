@@ -11,7 +11,6 @@ import numpy as np
 # - a single marker detection
 # - a depth map
 # - our subs dimensions
-# -
 
 
 # synthetic depth map ( not noisy )
@@ -48,13 +47,13 @@ sub_length = 0.5
 # the goal now is the calculate the correct Y coordinate such that the sub can go below the marker
 # we wanna make sure there there is atleast a 15cm gap between the marker and the sub's target depth
 
-marker_edge = (385+35 - cy) * depth_map[385, 749] / fy
+marker_edge = ???
 
-target_y = marker_edge + sub_height/2 + 0.15
+target_y = ???
 
 # now that we have that lets calculate the correct pixel that corresponds to this y value
 # use the pinhole camera model y
-v = (target_y * fy / depth_map[385, 749] ) + cy
+v = ???
 
 # visualization of code (you don't need to change anything here)
 # do look through this tho it works on the pinhole camera model
