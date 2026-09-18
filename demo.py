@@ -22,7 +22,6 @@ scale = 2.75 / 38   # 0.07237 m/pixel
 depth_map = depth_raw * scale
 # the depth map is a 2d array image
 # with each pixel corresponding to distance from camera in meters
-print("Z = ", depth_map[385, 749])
 #camera intrinsics(these are estimated values which will suffice for this training):
 IMAGE_W, IMAGE_H = 1278, 718
 fx, fy = 460.0, 460.0
@@ -40,24 +39,26 @@ sub_length = 0.5
 
 # something to note in general:
 # Camera frame: X left-right, Y up-down, Z - the depth (forward - backward)
-
+# pixel index is represented as (u,v)
 # Pinhole formula:
 #   X = (u - cx) * Z / fx
 #   Y = (v - cy) * Z / fy
-#   Z = depth value fetched above
+#   Z = depth value from the map
 
-
-# --- what people would have to write to compute depth
+# the goal now is the calculate the correct Y coordinate such that the sub can go below the marker
+# we wanna make sure there there is atleast a 15cm gap between the marker and the sub's target depth
 
 marker_edge = (385+35 - cy) * depth_map[385, 749] / fy
 
 target_y = marker_edge + sub_height/2 + 0.15
 
+# now that we have that lets calculate the correct pixel that corresponds to this y value
+# use the pinhole camera model y
 v = (target_y * fy / depth_map[385, 749] ) + cy
-
 
 # visualization of code (you don't need to change anything here)
 # do look through this tho it works on the pinhole camera model
+
 img = cv2.imread("images/gate_img.png")
 
 u_marker, v_marker, r_px = marker
