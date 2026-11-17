@@ -17,19 +17,34 @@ img = cv2.imread(path)
 # using the OpenCV documentation.
 
 # convert to grayscale (why?)
-gray = ?
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# we grayscale the image to simplify the vision algorithm.
+# hue can provide distracting info, and oftentimes we just need brightness.
 
 # blur the image (why?)
 kernel_size = (5,5)
 gray_blur = cv2.GaussianBlur(gray, kernel_size, 0)
 
+# another method used to decrease noise.
+# blurring can act as a filter, hopefully used to pick out outliers.
+
 # get the edges 
-edges = cv2.Canny(gray_blur, ?, ?)
+edges = cv2.Canny(gray_blur, 100, 200)
 
 # Hough Circle detection 
 # https://docs.opencv.org/4.x/da/d53/tutorial_py_houghcircles.html
 # Hint: use minRadius = 15 & maxRadius = 30 for this example
-circles = ?
+circles = cv2.HoughCircles(
+    gray_blur,
+    cv2.HOUGH_GRADIENT,
+    dp = 1.2,
+    minDist = 30,
+    param1 = 100,
+    param2 = 40,
+    minRadius = 15,
+    maxRadius = 30,
+)
 
 ##########################################################
 
@@ -66,4 +81,5 @@ plt.imshow(output_rgb)
 plt.axis("off")
 
 plt.tight_layout()
+plt.savefig("result.png", dpi=100)
 plt.show()
